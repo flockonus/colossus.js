@@ -1,0 +1,24 @@
+After set in motion, the MMO world never stops.
+
+This framework attempts to offer a enviroment for executing a low memmory footprint for lots of players.
+
+The main idea is that Peers transmit actions for the server, and the server transmit updates for the client based on ticks.
+
+The communication should happen via sockets for speed and efficiency sake.
+
+The app should be split in at least 2 executables:
+
+==1 server responsible for keeping the state of the world and transmiting the changes to the public server.
+>=1 server responsible for transmiting player actions to world server and vice versa.
+
+Features:
+
+- Secure; client express intentions server handle security.
+- Decoupled; processing and connection work independently.
+- Reusable; client-centric parts of the code are able to run as-is*, both client & server.
+- Powerful; one instance of the server, should be able to handle a large # of clients.
+- Fast; responses should be fast enough for action games.
+
+
+* this is a early wish
+** limited to use 1 core out of the machine for now
